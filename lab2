@@ -1,0 +1,78 @@
+package program;
+
+public class MyThread extends Thread {
+	public MyThread() {
+		super("MyThread");
+	}
+		public void run() {
+			Uruchom.Wypisz("Wątek Thread");
+		}
+}
+
+
+
+package program;
+
+public class Zajecia implements Runnable {
+
+	public void run() {
+		Uruchom.Wypisz("Wątek Runnable");
+	}
+}
+
+
+
+
+package program;
+
+public class Uruchom {
+
+	public static void main(String[] args) {
+		Zajecia w1 = new Zajecia();
+	    MyThread w2 = new MyThread();
+	    
+	   (new Thread(w1)).start();
+	    w2.start();    
+	}
+	public static synchronized void Wypisz(String tekst){
+	    for(int i = 1; i<=10; i++)
+	        System.out.println(i+": "+tekst);
+
+}
+}
+
+
+
+package program;
+
+public class Uczen {
+    String imie;
+    String nazwisko;
+    int wiek;
+}
+	public void wyswietl() {
+		System.out.println(Imie);
+	}
+  
+  
+  package program;
+
+public class Klasa {
+
+	public static void main(String[] args) {
+	    Uczen Uczen1 = new Uczen();
+        Uczen Uczen2 = new Uczen();
+ 
+        Uczen1.imie = "Staszek";
+        Uczen1.nazwisko = "Ptaszek";
+        Uczen1.wiek = 35;
+ 
+        Uczen2.imie = "Wlodek";
+        Uczen2.nazwisko = "Zieba";
+        Uczen2.wiek = 45;
+ 
+        System.out.println("Pracownicy firmy to:");
+        System.out.println(Uczen1.imie+" "+Uczen1.nazwisko+", "+Uczen1.wiek+" lat");
+        System.out.println(Uczen2.imie+" "+Uczen2.nazwisko+", "+Uczen2.wiek+" lat");
+    }
+}
