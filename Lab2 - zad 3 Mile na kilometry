@@ -1,0 +1,20 @@
+package lab2;
+import java.util.Scanner;  
+
+public class MileNaKilometry
+{
+   public static void main(String[] args)
+   {
+      double mile;  
+ 
+      Scanner klawiatura = new Scanner(System.in);
+ 
+      System.out.print("Podaj ilosc mil:  ");
+      mile = klawiatura.nextInt();
+
+      double kilometery = mile * 1.609344;
+ 
+ 
+      System.out.println(mile + " mil to " + kilometery + " kilometerow ");
+   }
+} 
