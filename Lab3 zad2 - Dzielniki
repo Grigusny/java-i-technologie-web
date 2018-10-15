@@ -1,0 +1,18 @@
+package lab3;
+import java.util.Scanner; 
+public class Dzielniki {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Podaj liczbe: ");
+		int x = scan.nextInt();
+		int i;
+		System.out.print(x+" - Dzielniki to: ");
+		for(i=1;i<x;i++)
+			if(x % i == 0) {
+				System.out.print(i+" ");
+			}
+	}
+
+}
