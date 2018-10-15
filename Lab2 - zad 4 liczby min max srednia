@@ -4,7 +4,10 @@ public class Liczby {
 
 	public static void main(String[] args) {
       
-        int[] tablica=new int[6];
+	java.util.Scanner scanner = new java.util.Scanner(System.in);
+        System.out.println("Podaj rozmiar tablicy");
+        int[] tablica = new int[scanner.nextInt()];
+        System.out.println("rozmiar tablicy to: " + tablica.length);
         float suma=0;
         
         Scanner odczyt= new Scanner(System.in);
