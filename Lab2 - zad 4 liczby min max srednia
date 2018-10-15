@@ -1,0 +1,37 @@
+package lab2;
+import java.util.Scanner;
+public class Liczby {
+
+	public static void main(String[] args) {
+      
+        int[] tablica=new int[6];
+        float suma=0;
+        
+        Scanner odczyt= new Scanner(System.in);
+        System.out.println("Wczytaj liczby");
+        for (int i=0; i<tablica.length; i++) {
+            tablica[i]=odczyt.nextInt();
+        }
+            int min = tablica[0];
+            int max=tablica[0];
+            for (int i=0; i<tablica.length; i++) {
+                if(tablica[i]<min) {
+                    min=tablica[i];
+                }
+            } for (int i=0; i<tablica.length; i++) {
+                if(tablica[i] > max) {
+                    max=tablica[i];
+                }
+            } System.out.println("Najmniejsza liczba wynosi " +min+" a Największa liczba wynosi " +max);
+         
+         int ilość= tablica.length;
+        System.out.println("Ilość podanych liczb = " +ilość);
+        
+        for(int i=0; i< tablica.length; i++) {
+            suma += tablica[i];
+        } float średnia= suma/tablica.length;
+        System.out.println("Średnia podanych liczb wynosi: " +średnia);
+         
+    }
+      
+}
