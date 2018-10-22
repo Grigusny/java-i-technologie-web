@@ -1,0 +1,18 @@
+package lab3;
+import java.util.Scanner;
+public class Potegi {
+
+	public static void main(String[] args) { Scanner sc = new Scanner(System.in);
+    System.out.println("Wprowadz dodatnia liczbe: ");
+    
+    int getnumb = sc.nextInt(); // Zdefiniowanie zmiennej "getnumb" typu int o podanej wartosci.
+    if (getnumb < 0) // Warunek sprawdzajacy czy zmienna jest mniejsza od 0.
+    {
+      System.out.println("Liczba jest ujemna.");
+    }
+    for (int p = 1; p < getnumb; p *= 3) // Petla for sprawdzajaca warunek getnumb.
+    {
+      System.out.print(p + ",  "); // Wypisanie wszystkich poteg.
+    }
+  }
+}
