@@ -1,0 +1,19 @@
+package lab3;
+import java.util.Scanner;
+
+public class Do5 {
+
+	public static void main(String[] args) { 
+		Scanner sc = new Scanner(System.in);
+	    System.out.println("Wprowadz liczbe: ");
+	    
+	    int a = 1; // Przypisanie zmiennej "a" typu int wartosci 1.
+	    int getnumb; // Zdefiniowanie zmiennej "getnumb" typu int.
+	    do { getnumb = sc.nextInt(); // Instrukcja dla zmiennej "getnumb".
+	      a *= getnumb;
+
+	    }
+	    while (getnumb != 5); // Gdy zmienna "getnumb" osiagnie wartosc 5, to program wypisze iloczyn wszystkich podanych liczb.
+	    System.out.println("Iloczyn liczb = " + a);
+	  }
+	}
