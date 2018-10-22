@@ -1,0 +1,40 @@
+package lab2;
+import java.io.PrintStream;
+public class Salon{
+	
+	  public static void main(String[] args) { java.util.Scanner sc = new java.util.Scanner(System.in);
+	    System.out.print("Wprowadz wielkosc zobowiazania kredytowego. Maksymalna wartosc wynosi 300 000 PLN. ");
+	    double k = sc.nextDouble(); // Przypisanie do zmiennej "k" typu double wartosci (kwoty).
+	    System.out.print("Wprowadz ilosc miesiecy, przez ile chcesz splacac kredyt. Dostepne opcje to: 24, 48, 60, 72, 96 ");
+	    int mies = sc.nextInt(); // Przypisanie do zmiennej "mies" typu int wartosci (liczby miesiecy).
+	    
+	    switch (mies) // Instrukcja wyboru switch, zalezna od podanej ilosci miesiecy.
+	    {
+
+	 // Case - wartosci wyboru. Sa odczywtywane w zalezonosci od podanej opcji: 24, 48, 60, 72, 96
+	    case 24: 
+	      System.out.println("W opcji 24 miesiecy, miesieczny koszt kredytu wynosi: " + k * 1.02 / 24.0 + " PLN"); // Kwota pomnozona przez wartosc z danych do zadania, nastepnie podzielona przez ilosc danych miesiecy.
+	      System.out.println("Calkowita kwota do splaty wraz z odestkami: " + k * 1.02 + " PLN"); // Kwota pomnozona przez wartosc z danych do zadania.
+	      break;
+	    
+	    case 48: 
+	      System.out.println("W opcji 48 miesiecy, miesieczny koszt kredytu wynosi: " + k * 1.03 / 48.0 + " PLN"); 
+	      System.out.println("Calkowita kwota do splaty wraz z odestkami: " + k * 1.03 + " PLN"); 
+	      break;
+	    
+	    case 60: 
+	      System.out.println("W opcji 60 miesiecy, miesieczny koszt kredytu wynosi: " + k * 1.04 / 60.0 + " PLN");
+	      System.out.println("Calkowita kwota do splaty wraz z odestkami: :" + k * 1.04 + " PLN");
+	      break;
+	    
+	    case 72: 
+	      System.out.println("W opcji 72 miesiecy, miesieczny koszt kredytu wynosi: " + k * 1.05 / 72.0 + " PLN");
+	      System.out.println("Calkowita kwota do splaty wraz z odestkami: " + k * 1.05 + " PLN");
+	      break;
+	    
+	    case 96: 
+	      System.out.println("W opcji 96 miesiecy, miesieczny koszt kredytu wynosi: " + k * 1.06 / 96.0 + " PLN");
+	      System.out.println("Calkowita kwota do splaty wraz z odestkami: " + k * 1.06 + " PLN");
+	    } 
+	  }
+	}
