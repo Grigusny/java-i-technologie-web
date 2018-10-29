@@ -1,9 +1,29 @@
 package lab3;
 import java.util.Random;
+import java.util.Scanner;
 public class Losowanie {
 
 	public static void main(String[] args) {
-		Random r = new Random(); 
-		System.out.println(r.nextInt(199)+1 );
-	}
+        Random r = new Random();
+        Scanner s = new Scanner(System.in);
+        int randomNumber = r.nextInt(200) + 1;
+
+        System.out.println("Podaj liczbe");
+        while (true) {
+            int inputNumber = s.nextInt();
+            if(inputNumber == randomNumber) {
+                System.out.println("gratulacje wygrales");
+                break;
+            }
+            else if (inputNumber<randomNumber){
+                System.out.println("liczba za mala");
+            }
+            else if (inputNumber>randomNumber){
+                System.out.println("liczba za duza");
+            }
+
+        }
+
+    }
+
 }
