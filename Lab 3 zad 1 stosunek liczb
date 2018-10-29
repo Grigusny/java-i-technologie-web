@@ -2,47 +2,63 @@ package lab3;
 import java.util.Scanner;
 public class Liczbystos {
 
-	static private double sumaParzyste;
-    static private double sumaNieparzyste;
-    static private int countParzyste;
-    static private int countNieparzyste;
-    
-	public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int liczba = s.nextInt();
-
-        for(int i =1; i<=liczba;i++){
-            if(i%2==0) parzysta(i);
-            else nieparzysta(i);
-        }
-
-	System.out.println("sr nieparzysta: " + sumaParzyste/countParzyste);
-        System.out.println("sr parzysta: " + sumaNieparzyste/countNieparzyste);
-        System.out.println("stosunek: " + Math.abs((sumaNieparzyste/countNieparzyste)/(sumaParzyste/countParzyste)));
-
-        if(pierwsza(liczba)) System.out.println("liczba pierwsza");
-        else System.out.println("liczba nie jest pierwsza");
-
-    }
-
-    private static boolean pierwsza(int liczba) {
-        if(liczba <=1){return false;}
-
-        for(int i=2; i<=liczba/2;i++){
-            if(liczba%i==0)return false;
-        }
-
-        return true;
-    }
-
-    private static void parzysta(int liczba) {
-    sumaParzyste += liczba;
-    countParzyste++;
-    }
-
-    private static void nieparzysta(int liczba) {
-    sumaNieparzyste += liczba;
-    countNieparzyste++;
-    }
-
+	public static void main(String[] args) 
+	{
+		System.out.println("Podaj liczbe");
+		
+		int liczba;
+		
+		try(Scanner skaner = new Scanner(System.in))
+		{
+			liczba = skaner.nextInt();
+		}
+		
+		//Stosunek
+		String liczbas = String.valueOf(liczba);
+		
+		if(liczbas.length() >= 4)
+		{
+			int parzystesuma = 0, parzystelicznik = 0;
+			int nieparzystesuma = 0, nieparzystelicznik = 0;
+			
+			for(int i=0;i<liczbas.length();i++)
+			{
+				int num = Integer.parseInt(liczbas.substring(i, i+1));
+				
+				if(i%2==1)
+				{
+					parzystesuma += num;
+					parzystelicznik += 1;
+				}
+				else
+				{
+					nieparzystesuma += num;
+					nieparzystelicznik += 1;
+				}
+			}
+			
+			double sredniapar = parzystesuma/parzystelicznik;
+			double srednianiepar = nieparzystesuma/nieparzystelicznik;
+			
+			double stosunek = srednianiepar / sredniapar;
+					
+			System.out.println("stosunek: " + stosunek);
+		}	
+		//liczba pierwsza
+		boolean pierwsza = true;
+		
+		for(int i = 2; i < liczba; i++)
+		{
+			if(liczba % i == 0)
+			{
+				System.out.println("Liczba nie jest pierwsza");
+				pierwsza = false;
+				break;
+			}
+		}
+		if(pierwsza == true)
+		{
+			System.out.println("Liczba pierwsza");
+		}	
+	}
 }
