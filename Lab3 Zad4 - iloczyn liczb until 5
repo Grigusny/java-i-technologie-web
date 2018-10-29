@@ -14,6 +14,6 @@ public class Do5 {
 
 	    }
 	    while (getnumb != 5); // Gdy zmienna "getnumb" osiagnie wartosc 5, to program wypisze iloczyn wszystkich podanych liczb.
-	    System.out.println("Iloczyn liczb = " + a);
+	    System.out.println("Iloczyn liczb = " + a/5); // // podzielic przez 5 i dziala
 	  }
 	}
