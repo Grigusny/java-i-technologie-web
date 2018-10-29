@@ -1,0 +1,42 @@
+package lab4;
+import java.io.PrintStream;
+
+public class Macierz15 {
+
+	public static void main(String[] args) { 
+		int matrix[][] = new int[15][15]; //Tworzenie dwuwymiarowej tablicy macierzy typu int o rozmiarze 15 i 15.
+	    float tab[][] = new float[1][15]; //Tworzenie dwuwymiarowej tablicy (zawierajacej srednia) typu float o rozmiarze 1 i 15.
+	    int suma =0; //Tworzenie zmiennej suma typu int.
+	    float sred =0.0F; //Tworzenie zmiennej sred typu float, ktora przyjmie wartosc sredniej z 1 miejscem po przecinku.
+	    
+	    for (int i=0;i<15;i++) //Petla for wypisujaca liczby od 1 do 15 w tablicy macierzy.
+	    {
+	      for (int j=0;j<15;j++) 
+	      {
+	        matrix[i][j]=((i+1)*(j+1));
+	      }
+	    }
+	    
+	    for (int i=0;i<15;i++) //Petla for wypisujaca znak "|" na poczatku i koncu macierzy.
+	     {
+	    	System.out.print("|");
+	    for (int j=0;j<15;j++) 
+	      {
+	        System.out.print(" " + matrix[i][j] + " ");
+	      }
+	      	System.out.println("|");
+	     }
+	    
+	    for (int i=0;i<15;i++) //Petla for obliczajaca srednia z sumy kolejnych kolumn macierzy, a nastepnie wypisujaca wynik do tablicy "tab".
+	      {
+	    for (int j=0;j<15;j++) 
+	      {
+	        suma += matrix[i][j];
+	        sred = suma / 15;
+	      }
+	      	tab[0][i] = sred;
+	      	System.out.print("(" + tab[0][i] + ") ");
+	    }
+	    
+	    }
+	}
