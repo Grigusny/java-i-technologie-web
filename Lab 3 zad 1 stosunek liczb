@@ -16,8 +16,8 @@ public class Liczbystos {
             else nieparzysta(i);
         }
 
-        System.out.println("sr nieparzysta: " + sumaNieparzyste/countNieparzyste);
-        System.out.println("sr parzysta: " + sumaParzyste/countParzyste);
+	System.out.println("sr nieparzysta: " + sumaParzyste/countParzyste);
+        System.out.println("sr parzysta: " + sumaNieparzyste/countNieparzyste);
         System.out.println("stosunek: " + Math.abs((sumaNieparzyste/countNieparzyste)/(sumaParzyste/countParzyste)));
 
         if(pierwsza(liczba)) System.out.println("liczba pierwsza");
