@@ -1,0 +1,182 @@
+package lab5;
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class AutoKomis {
+
+
+    public static ArrayList<Samochod> listaSamochodow = new ArrayList<>();
+
+    public static void main(String[] args) {
+
+        createCars();
+
+        try {
+            ;
+        } catch (DateTimeException e) {
+            System.out.println("Podano zla date!!");
+        }
+
+        Scanner s = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("co chcesz zrobic 1-wypisz samochody 2-stworz swoj samochod 3-usun samochod 4- spr gwarancje");
+            int co = s.nextInt();
+            switch (co) {
+                case 1: {
+                    printOutAllCars();
+                    break;
+                }
+                case 2: {
+                    createCustomCar();
+                    break;
+                }
+                case 3:{
+                    deleteCar();
+                }
+                case 4:{
+                    sprGwar();
+                }
+                default:
+                    break;
+            }
+        }
+
+
+    }
+
+    private static void sprGwar() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("podaj id");
+        System.out.println(listaSamochodow.get(s.nextInt()).sprGwaracje());
+
+
+    }
+
+    private static void deleteCar() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("podaj id");
+        listaSamochodow.remove(s.nextInt());
+        s.close();
+    }
+
+    private static void printOutAllCars() {
+        for (Samochod s : listaSamochodow) {
+            System.out.println("id: "+ listaSamochodow.indexOf(s) +"   "+s);
+        }
+
+    }
+
+    private static void createCars() {
+
+        Samochod honda = new Samochod("Honda", "civic", LocalDate.of(2010, 12, 20), 2000);
+        honda.setPojemnosc(10);
+        honda.setTyp("osobowy");
+        honda.setSilnik("szybki");
+        honda.setRokProdukcji(1993);
+        listaSamochodow.add(honda);
+
+        Samochod bmw = new Samochod("BMW", "X4", LocalDate.of(2017, 11, 1), 202300);
+        bmw.setPojemnosc(11);
+        bmw.setTyp("osobowy");
+        bmw.setSilnik("diesel");
+        bmw.setRokProdukcji(2014);
+        listaSamochodow.add(bmw);
+
+        Samochod chev = new Samochod("CHEVROLET", "Malibu", LocalDate.of(2013, 11, 1), 202300);
+        chev.setPojemnosc(22);
+        chev.setTyp("osobowy");
+        chev.setSilnik("hybrid");
+        chev.setRokProdukcji(1996);
+        listaSamochodow.add(chev);
+
+        Samochod cit = new Samochod("CITROEN", "Berlingo", LocalDate.of(1996, 11, 1), 202300);
+        cit.setPojemnosc(11);
+        cit.setTyp("osobowy");
+        cit.setSilnik("Gasoline");
+        cit.setRokProdukcji(2011);
+        listaSamochodow.add(cit);
+
+        Samochod cit2 = new Samochod("CITROEN", "E-Mehari", LocalDate.of(2016, 11, 1), 202300);
+        cit2.setPojemnosc(11);
+        cit2.setTyp("osobowy");
+        cit2.setSilnik("electric");
+        cit2.setRokProdukcji(2016);
+        listaSamochodow.add(cit2);
+
+
+        Samochod dat = new Samochod("Datsun", "GO", LocalDate.of(2014, 11, 1), 202300);
+        dat.setPojemnosc(11);
+        dat.setTyp("osobowy");
+        dat.setSilnik("gasoline");
+        dat.setRokProdukcji(2013);
+        listaSamochodow.add(dat);
+
+
+        Samochod dodge1 = new Samochod("Dodge", "Challanger", LocalDate.of(2011, 11, 1), 202300);
+        dodge1.setPojemnosc(21);
+        dodge1.setTyp("osobowy");
+        dodge1.setSilnik("gasoline");
+        dodge1.setRokProdukcji(1969);
+        listaSamochodow.add(dodge1);
+
+
+        Samochod dodge2 = new Samochod("Dodge", "charger", LocalDate.of(2001, 11, 1), 202300);
+        dodge2.setPojemnosc(21);
+        dodge2.setTyp("osobowy");
+        dodge2.setSilnik("gasoline");
+        dodge2.setRokProdukcji(1965);
+        listaSamochodow.add(dodge2);
+
+
+        Samochod ford1 = new Samochod("Ford", "Trueno", LocalDate.of(2013, 11, 1), 202300);
+        ford1.setPojemnosc(21);
+        ford1.setTyp("osobowy");
+        ford1.setSilnik("Diesel");
+        ford1.setRokProdukcji(2003);
+        listaSamochodow.add(ford1);
+
+
+        Samochod ford2 = new Samochod("Ford", "Edge", LocalDate.of(2017, 11, 1), 202300);
+        ford2.setPojemnosc(21);
+        ford2.setTyp("osobowy");
+        ford2.setSilnik("Diesel");
+        ford2.setRokProdukcji(2006);
+        listaSamochodow.add(ford2);
+
+    }
+
+    private static void createCustomCar() throws DateTimeException {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Podaj marke");
+        String marka = s.nextLine();
+        System.out.println("Podaj model");
+        String model = s.nextLine();
+        System.out.println("Podaj rok rejestracji");
+        int year = s.nextInt();
+        System.out.println("Podaj miesiac rejestracji");
+        int month = s.nextInt();
+        System.out.println("Podaj dzien rejestracji");
+        int day = s.nextInt();
+        System.out.println("Podaj cene");
+        int price = s.nextInt();
+        Samochod customCar = new Samochod(marka, model, LocalDate.of(year, month, day), price);
+
+        System.out.println("Podaj pojemnosc");
+        customCar.setPojemnosc(s.nextInt());
+        System.out.println("Podaj typ");
+        customCar.setTyp(s.nextLine());
+        System.out.println("Podaj silnik");
+        customCar.setSilnik(s.nextLine());
+        System.out.println("Podaj rok prod");
+        customCar.setRokProdukcji(s.nextInt());
+
+        listaSamochodow.add(customCar);
+
+
+    }
+
+}
