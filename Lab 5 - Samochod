@@ -1,0 +1,114 @@
+package lab5;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Date;
+
+public class Samochod {
+
+    private String marka ="brak informacji";
+    private String model="brak informacji";
+    private double pojemnosc = 0;
+    private String typ="brak informacji";
+    private String silnik="brak informacji";
+    private int rokProdukcji = 0;
+    private LocalDate pierwszaRejestracja=null;
+    private double cena = 0;
+
+
+
+    @Override
+    public String toString() {
+        return "Samochod{" +
+                "marka='" + marka + '\'' +
+                ", model='" + model + '\'' +
+                ", pojemnosc=" + pojemnosc +
+                ", typ='" + typ + '\'' +
+                ", silnik='" + silnik + '\'' +
+                ", rokProdukcji=" + rokProdukcji +
+                ", pierwsza Rejestracja=" + pierwszaRejestracja +
+                ", cena=" + cena +
+                '}';
+    }
+
+    public Samochod(String marka, String model, LocalDate pierwszaRejestracja, double cena) {
+        this.marka = marka;
+        this.model = model;
+        this.pierwszaRejestracja = pierwszaRejestracja;
+        this.cena = cena;
+
+    }
+
+
+    public String getMarka() {
+        return marka;
+    }
+
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public double getPojemnosc() {
+        return pojemnosc;
+    }
+
+    public void setPojemnosc(double pojemnosc) {
+        this.pojemnosc = pojemnosc;
+    }
+
+    public String getTyp() {
+        return typ;
+    }
+
+    public void setTyp(String typ) {
+        this.typ = typ;
+    }
+
+    public String getSilnik() {
+        return silnik;
+    }
+
+    public void setSilnik(String silnik) {
+        this.silnik = silnik;
+    }
+
+    public int getRokProdukcji() {
+        return rokProdukcji;
+    }
+
+    public void setRokProdukcji(int rokProdukcji) {
+        this.rokProdukcji = rokProdukcji;
+    }
+
+    public LocalDate getPierwszaRejestracja() {
+        return pierwszaRejestracja;
+    }
+
+    public void setPierwszaRejestracja(LocalDate pierwszaRejestracja) {
+        this.pierwszaRejestracja = pierwszaRejestracja;
+    }
+
+    public double getCena() {
+        return cena;
+    }
+
+    public void setCena(double cena) {
+        this.cena = cena;
+    }
+
+    public String sprGwaracje(){
+        Period diff = Period.between(pierwszaRejestracja, LocalDate.now());
+        if(diff.toTotalMonths()<=24){
+            return "Samochod na dzien dzisiejszy posiada jeszcze gwarancje (zarejestrowany " +getPierwszaRejestracja() + ") czyli: "+diff.toTotalMonths() + " mcs od 1 rejestracji";
+        }else{
+            return "Samochod na dzien dzisiejszy nie posiada juz gwaracji! (zarejestrowany " +getPierwszaRejestracja() + ") czyli: "+diff.toTotalMonths()+ " mcs od 1 rejestracji";
+        }
+    }
+}
