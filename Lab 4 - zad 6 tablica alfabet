@@ -1,0 +1,18 @@
+package lab4;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Alfabet {
+
+    public static void main (String [] args) {
+        int wybor = 0;
+        char[] tab = new char[40], alfabet ={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};//przypisanie tablicy alfabetu
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("podaj ilosc wyswietlanych znakow");
+        wybor = scanner.nextInt();
+        for(int i=0;i<wybor;i++){//pętla zapisująca wybraną ilosc liter do tablicy
+        tab[i] = alfabet[i];
+        System.out.println(tab[i]);
+        }
+    }
+}
