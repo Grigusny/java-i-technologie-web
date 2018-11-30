@@ -22,3 +22,37 @@ public class Tablica30 {
 	}
 
 }
+
+
+
+
+
+package lab4;
+import java.util.Random;
+import java.util.Arrays;
+public class Tablica30 {
+
+	public static void main(String[] args) {
+		int[]tablica1 = new int [30]; //Tworzenie pierwszej tablicy o wielkosci 30.
+		int[]tablica2 = new int [30]; //Tworzenie drugiej tablicy o wielkosci 30.
+		Random rn = new Random(); //Funkcja random.
+		
+		for(int i=0;i<30;i++) //Petla z warunkiem 
+		{
+			int result = rn.nextInt(150 - 99 + 1) + 99; //Zdefiniowanie zmiennej result typu int, do której przypisany jest zakres dzialania funkcji random.
+			
+			tablica1[i]=result; //Przypisanie wartosci zmiennej result do zawartosci pierwszej tablicy.
+			tablica2[i]=tablica1[i]; //Przypisanie zawartosci pierwszej tablicy do drugiej tablicy.
+			
+		}
+		for(int i=0; i<30; i++){
+			System.out.print(tablica1[i]); //Wyswietlenie zawartosci pierwszej tablicy.
+		}
+		System.out.println();
+		for(int i=0; i<30; i++){
+			System.out.print(tablica2[i]); //Wyswietlenie zawartosci drugiej tablicy.
+		}
+				 
+	}
+
+}
